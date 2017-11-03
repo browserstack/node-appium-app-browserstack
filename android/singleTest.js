@@ -12,7 +12,7 @@ desiredCaps = {
   'browserstack.debug' : true,
   'realMobile' : true
 };
-driver = wd.promiseRemote("http://hub.browserstack.com/wd/hub");
+driver = wd.promiseRemote("http://hub-cloud.browserstack.com/wd/hub");
 
 driver
   .init(desiredCaps)

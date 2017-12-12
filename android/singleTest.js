@@ -9,8 +9,7 @@ desiredCaps = {
   'name': 'single_test',
   'device' : 'Google Pixel',
   'app' : 'bs://<hashed app-id>',
-  'browserstack.debug' : true,
-  'realMobile' : true
+  'browserstack.debug' : true
 };
 driver = wd.promiseRemote("http://hub-cloud.browserstack.com/wd/hub");
 

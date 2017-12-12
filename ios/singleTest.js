@@ -11,8 +11,7 @@ desiredCaps = {
   'name': 'single_test',
   'device' : 'iPhone 7 Plus',
   'app' : 'bs://<hashed app-id>',
-  'browserstack.debug' : true,
-  'realMobile' : true
+  'browserstack.debug' : true
 };
 driver = wd.promiseRemote("http://hub-cloud.browserstack.com/wd/hub");
 
@@ -44,12 +43,16 @@ driver
   .then(function (textElements) {
     return Q().then(function () {
       return textElements.map(function (textElement) {
-        return textElement.text().then(function(value) {
-          if (value.indexOf('not registered') !== -1) {
-            console.log(value);
-            assert(value.indexOf('This email address is not registered on WordPress.com') !== -1);
-          }
-        });
+        if (textElement === null) {
+          return;
+        } else {
+          return textElement.text().then(function(value) {
+            if (value.indexOf('not registered') !== -1) {
+              console.log(value);
+              assert(value.indexOf('This email address is not registered on WordPress.com') !== -1);
+            }
+          });
+        }
       })
     }).all()
   })

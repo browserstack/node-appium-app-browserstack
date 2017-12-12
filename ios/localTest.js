@@ -17,8 +17,7 @@ desiredCaps = {
   'device' : 'iPhone 7 Plus',
   'app' : 'bs://<hashed app-id>',
   'browserstack.debug' : true,
-  'browserstack.local' : true,
-  'realMobile' : true
+  'browserstack.local' : true
 };
 
 var customTextNonEmpty = new Asserter(

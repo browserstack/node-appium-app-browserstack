@@ -16,7 +16,7 @@ driver = wd.promiseRemote("http://hub-cloud.browserstack.com/wd/hub");
 driver
   .init(desiredCaps)
   .then(function () {
-    return driver.waitForElementById('Search Wikipedia', asserters.isDisplayed && asserters.isEnabled, 30000);
+    return driver.waitForElementByAccessibilityId('Search Wikipedia', asserters.isDisplayed && asserters.isEnabled, 30000);
   })
   .then(function (searchElement) {
     return searchElement.click();

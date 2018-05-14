@@ -18,43 +18,27 @@ driver = wd.promiseRemote("http://hub-cloud.browserstack.com/wd/hub");
 driver
   .init(desiredCaps)
   .then(function () {
-    return driver.waitForElementById('Log In', asserters.isDisplayed && asserters.isEnabled, 30000);
+    return driver.waitForElementById('Text Button', asserters.isDisplayed && asserters.isEnabled, 30000);
   })
-  .then(function (loginButton) {
-    return loginButton.click();
-  })
-  .then(function () {
-    return driver.waitForElementById('Email address', asserters.isDisplayed && asserters.isEnabled, 30000);
-  })
-  .then(function (emailInput) {
-    return emailInput.sendKeys("hello@browserstack.com");
+  .then(function (textButton) {
+    return textButton.click();
   })
   .then(function () {
-    return driver.waitForElementById('Next', asserters.isDisplayed, 30000);
+    return driver.waitForElementById('Text Input', asserters.isDisplayed && asserters.isEnabled, 30000);
   })
-  .then(function (nextButton) {
-    return nextButton.click().then(function() {
-      sleep.sleep(5);
+  .then(function (textInput) {
+    return textInput.sendKeys("hello@browserstack.com"+"\n");
+  })
+  .then(function () {
+    return driver.waitForElementById('Text Output', asserters.isDisplayed && asserters.isEnabled, 30000);
+  })
+  .then(function (textOutput) {
+    return textOutput.text().then(function(value) {
+      if (value === "hello@browserstack.com")
+        assert(true);
+      else
+        assert(false);
     });
-  })
-  .then(function() {
-    return driver.waitForElementsByXPath("//XCUIElementTypeStaticText", asserters.isDisplayed, 30000);
-  })
-  .then(function (textElements) {
-    return Q().then(function () {
-      return textElements.map(function (textElement) {
-        if (textElement === null) {
-          return;
-        } else {
-          return textElement.text().then(function(value) {
-            if (value.indexOf('not registered') !== -1) {
-              console.log(value);
-              assert(value.indexOf('This email address is not registered on WordPress.com') !== -1);
-            }
-          });
-        }
-      })
-    }).all()
   })
   .fin(function() { return driver.quit(); })
   .done();

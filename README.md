@@ -14,10 +14,10 @@ This repository demonstrates how to run Appium NodeJS tests on BrowserStack App 
 
 ### Install the dependencies
 
-Install the `wd` driver by running the following command :
+Install the dependencies using the following command :
 
 ```
-npm install wd
+npm install
 ```
 
 ## Getting Started

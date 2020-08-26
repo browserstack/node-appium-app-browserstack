@@ -40,7 +40,7 @@ Ensure that @ symbol is prepended to the file path in the above request. Please 
 
 ### **Run first test :**
 
-Open `FirstTest.js` file in Android or ios folder
+Open `BrowserStackSampleAndroid.js` file in Android folder or `BrowserStackSampleiOS.js` in ios folder
 
 - Replace `YOUR_USERNAME` & `YOUR_ACCESS_KEY` with your BrowserStack access credentials
 
@@ -50,7 +50,7 @@ Open `FirstTest.js` file in Android or ios folder
 
 - If you have uploaded your own app update the test case
 
-- Run `node FirstTest.js`
+- Run `node BrowserStackSampleAndroid.js` or `node BrowserStackSampleiOS.js`
 
 For more details, refer to our documentation - [Get Started with your first test on App Automate](https://www.browserstack.com/docs/app-automate/appium/getting-started/nodejs)
 

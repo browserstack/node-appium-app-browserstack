@@ -1,7 +1,7 @@
-var wd = require('wd');
-var assert = require('assert');
-var asserters = wd.asserters;
-var Q = wd.Q;
+let wd = require('wd');
+let assert = require('assert');
+let asserters = wd.asserters;
+let Q = wd.Q;
 
 desiredCaps = {
   // Set your BrowserStack access credentials

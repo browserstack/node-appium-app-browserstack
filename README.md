@@ -14,7 +14,7 @@ This repository demonstrates how to run Appium NodeJS tests on BrowserStack App 
 
 ### Install the dependencies
 
-To install the dependencies switch to `android/` or `ios/` folder and run the following command :
+To install the dependencies run the following command in the project's base directory :
 
 ```
 npm install

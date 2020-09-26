@@ -24,7 +24,9 @@ npm install
 
 Getting Started with Appium tests in NodeJS on BrowserStack couldn't be easier!
 
-### Upoad your Android or iOS App
+### Run your first test :
+
+**1. Upoad your Android or iOS App**
 
 Upload your Android app (.apk or .aab file) or iOS app (.ipa file) to BrowserStack servers using our REST API. Here is an example cURL request :
 
@@ -38,9 +40,9 @@ Ensure that @ symbol is prepended to the file path in the above request. Please 
 
 **Note**: If you do not have an .apk or .ipa file and are looking to simply try App Automate, you can download and test using our [sample Android app](https://www.browserstack.com/app-automate/sample-apps/android/WikipediaSample.apk) or [sample iOS app](https://www.browserstack.com/app-automate/sample-apps/ios/BStackSampleApp.ipa).
 
-### **Run first test :**
+**2. Configure and run your first test**
 
-Open `BrowserStackSampleAndroid.js` file in Android folder or `BrowserStackSampleiOS.js` in ios folder
+Open `BrowserStackSample.js` file in `Android` or in `ios` folder
 
 - Replace `YOUR_USERNAME` & `YOUR_ACCESS_KEY` with your BrowserStack access credentials
 
@@ -50,15 +52,45 @@ Open `BrowserStackSampleAndroid.js` file in Android folder or `BrowserStackSampl
 
 - If you have uploaded your own app update the test case
 
-- Run `node BrowserStackSampleAndroid.js` or `node BrowserStackSampleiOS.js`
+- Run `node BrowserStackSample.js`
 
 - You can access the test execution results, and debugging information such as video recording, network logs on [App Automate dashboard](https://app-automate.browserstack.com/dashboard)
 
-For more details, refer to our documentation - [Get Started with your first test on App Automate](https://www.browserstack.com/docs/app-automate/appium/getting-started/nodejs)
+---
 
 ### **Use Local testing for apps that access resources hosted in development or testing environments :**
 
-Refer to our documentation - [Get Started with Local testing on App Automate](https://www.browserstack.com/docs/app-automate/appium/getting-started/nodejs/local-testing)
+**1. Upload your Android or iOS App**
+
+Upload your Android app (.apk or .aab file) or iOS app (.ipa file) that access resources hosted on your internal or test environments to BrowserStack servers using our REST API. Here is an example cURL request :
+
+```
+curl -u "YOUR_USERNAME:YOUR_ACCESS_KEY" \
+-X POST "https://api-cloud.browserstack.com/app-automate/upload" \
+-F "file=@/path/to/apk/file"
+```
+
+Ensure that @ symbol is prepended to the file path in the above request. Please note the `app_url` value returned in the API response. We will use this to set the application under test while configuring the test later on.
+
+**Note**: If you do not have an .apk or .ipa file and are looking to simply try App Automate, you can download and test using our [sample Android Local app](https://www.browserstack.com/app-automate/sample-apps/android/LocalSample.apk) or [sample iOS Local app](https://www.browserstack.com/app-automate/sample-apps/ios/LocalSample.ipa).
+
+**2. Configure and run your local tes**
+
+Open `BrowserStackSampleLocal.js` file in `Android` or in `ios` folder
+
+- Replace `YOUR_USERNAME` & `YOUR_ACCESS_KEY` with your BrowserStack access credentials
+
+- Replace `bs://<app-id>` wkth the URL obtained from app upload step
+
+- Set the device and OS version
+
+- Ensure that `browserstack.local` capability is set to `true`. Within the test script, there is code snippet that automatically establishes Local Testing connection to BrowserStack servers using Javascript binding for BrowserStack Local.
+
+- If you have uploaded your own app update the test case
+
+- Run `node BrowserStackSampleLocal.js`
+
+- You can access the test execution results, and debugging information such as video recording, network logs on [App Automate dashboard](https://app-automate.browserstack.com/dashboard)
 
 ## Integration with other NodeJS frameworks
 

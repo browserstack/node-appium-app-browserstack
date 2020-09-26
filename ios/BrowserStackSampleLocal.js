@@ -21,7 +21,7 @@ desiredCaps = {
      // Set URL of the application under test
      'app' : 'bs://<app-id>',
   
-    // Specify device and os_version for testing
+    // Specify device and os_version for testingg
     'device' : 'iPhone 11 Pro',
     'os_version' : '13',
   

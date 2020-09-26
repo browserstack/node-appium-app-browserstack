@@ -18,7 +18,9 @@
   "homepage": "https://github.com/browserstack/node-appium-app-browserstack#readme",
   "dependencies": {
     "browserstack-local": "^1.0.2",
-    "wd": "^1.13.0"
+    "wd": "^1.13.0",
+    "chai": "^4.2.0",
+    "chai-as-promised": "7.1.1"
   },
   "engines": {
     "node": "^6"

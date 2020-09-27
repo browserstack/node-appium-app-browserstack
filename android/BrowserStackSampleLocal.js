@@ -40,7 +40,6 @@ let promise = new Promise(function(resolve, reject) {
 });
 
 promise.then(function() {
-   console.log("Debug 3")
     // Initialize the remote Webdriver using BrowserStack remote URL
     // and desired capabilities defined above
     driver = wd.promiseRemote("http://hub-cloud.browserstack.com/wd/hub");

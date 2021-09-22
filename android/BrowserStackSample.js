@@ -16,7 +16,7 @@ desiredCaps = {
 
   // Set other BrowserStack capabilities
   'project' : 'First NodeJS project',
-  'build' : 'Node Android',
+  'build' : 'browserstack-build-1',
   'name': 'first_test'
 };
 

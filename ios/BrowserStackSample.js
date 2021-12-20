@@ -9,10 +9,10 @@ desiredCaps = {
   'browserstack.key' : 'YOUR_ACCESS_KEY',
 
     // Set URL of the application under test
-  'app' : 'bs://<app-id>',
+  'app' : 'bs://da57b274194d98fc2506c8551a189d241d647731',
 
   // Specify device and os_version for testing
-  'device' : 'iPhone 11 Pro',
+  'device' : 'iPhone 11 Pro',da57b274194d98fc2506c8551a189d241d647731
   'os_version' : '13',
 
   // Set other BrowserStack capabilities

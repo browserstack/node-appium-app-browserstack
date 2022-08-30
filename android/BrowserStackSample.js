@@ -3,26 +3,29 @@ let assert = require('assert');
 let asserters = wd.asserters;
 
 desiredCaps = {
-  // Set your BrowserStack access credentials
-  'browserstack.user' : 'YOUR_USERNAME',
-  'browserstack.key' : 'YOUR_ACCESS_KEY',
-
-  // Set URL of the application under test
-  'app' : 'bs://<app-id>',
+  "forceW3C": true,
 
   // Specify device and os_version for testing
-  'device' : 'Google Pixel 3',
-  'os_version' : '9.0',
+  "platformName": "Android",
+  "appium:platformVersion": "9.0",
+  "appium:deviceName": 'Google Pixel 3',
 
+  // Set URL of the application under test
+  "appium:app": 'bs://<app-id>',
   // Set other BrowserStack capabilities
-  'project' : 'First NodeJS project',
-  'build' : 'Node Android',
-  'name': 'first_test'
+  'bstack:options' : {
+    "projectName" : "First NodeJS Android Project",
+    "buildName" : "browserstack-build-1",
+    "sessionName" : "BStack first_test",
+    "debug" : "true",
+    "userName" : "YOUR_USERNAME",
+    "accessKey" : "YOUR_ACCESS_KEY"
+  }
 };
 
 // Initialize the remote Webdriver using BrowserStack remote URL
 // and desired capabilities defined above
-driver = wd.promiseRemote("http://hub-cloud.browserstack.com/wd/hub");
+driver = wd.promiseRemote("http://hub.browserstack.com/wd/hub");
 
 // Test case for the BrowserStack sample Android app. 
 // If you have uploaded your app, update the test case here. 

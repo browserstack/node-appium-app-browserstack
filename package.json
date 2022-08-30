@@ -2,7 +2,7 @@
   "name": "node-appium-app-browserstack",
   "version": "0.1.0",
   "readme": "NodeJS Integration with [BrowserStack](https://www.browserstack.com)",
-  "description": "Appium iOS examples for NodeJS and BrowserStack App Automate",
+  "description": "Appium iOS and Android examples for NodeJS and BrowserStack App Automate",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/browserstack/node-appium-app-browserstack.git"
@@ -17,9 +17,9 @@
   },
   "homepage": "https://github.com/browserstack/node-appium-app-browserstack#readme",
   "dependencies": {
-    "browserstack-local": "^1.0.2",
-    "wd": "^1.13.0",
-    "chai": "^4.2.0",
+    "browserstack-local": "^1.1.1",
+    "wd": "^1.14.0",
+    "chai": "^4.3.6",
     "chai-as-promised": "7.1.1"
   },
   "engines": {

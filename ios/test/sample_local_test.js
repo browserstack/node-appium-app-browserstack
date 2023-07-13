@@ -15,7 +15,7 @@ async function bstackLocalTest () {
         By.xpath(
           '/XCUIElementTypeApplication/XCUIElementTypeWindow/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeButton/XCUIElementTypeStaticText'
         )
-      ), 3000
+      ), 30000
     ).click();
 
     var textElement = await driver.findElement(

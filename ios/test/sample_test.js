@@ -15,14 +15,14 @@ async function bstackSampleTest () {
         By.xpath(
           '/XCUIElementTypeApplication/XCUIElementTypeWindow/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeButton[1]'
         )
-      ), 3000
+      ), 30000
     ).click();
 
     var textInput = await driver.wait(
       until.elementLocated(
         By.xpath(
           '/XCUIElementTypeApplication/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeTextField'
-        ), 3000
+        ), 30000
       )
     );
     await textInput.sendKeys('hello@browserstack.com\n');

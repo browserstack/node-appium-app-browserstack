@@ -33,7 +33,6 @@ async function bstackLocalTest () {
       'browserstack_executor: {"action": "setSessionStatus", "arguments": {"status":"passed","reason": "The connection is up and running"}}'
     );
   } catch (e) {
-    console.log(e);
     await driver.executeScript(
       'browserstack_executor: {"action": "setSessionStatus", "arguments": {"status":"failed","reason": "Some elements failed to load"}}'
     );

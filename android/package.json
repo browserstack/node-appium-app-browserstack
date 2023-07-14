@@ -9,7 +9,8 @@
   },
   "scripts": {
     "sample-test": "browserstack-node-sdk node test/sample_test.js",
-    "sample-local-test": "browserstack-node-sdk node test/sample_local_test.js"
+    "sample-local-test": "browserstack-node-sdk node test/sample_local_test.js",
+    "postinstall": "npm update browserstack-node-sdk"
   },
   "keywords": [
     "browserstack",
@@ -21,11 +22,7 @@
   },
   "homepage": "https://github.com/browserstack/node-appium-app-browserstack#readme",
   "dependencies": {
-    "browserstack-local": "^1.5.3",
-    "chai": "^4.2.0",
-    "chai-as-promised": "7.1.1",
-    "selenium-webdriver": "^4.10.0",
-    "wd": "^1.13.0"
+    "selenium-webdriver": "^4.10.0"
   },
   "engines": {
     "node": "^6"

@@ -42,9 +42,11 @@ Open `Android` or in `ios` folder
 
 Open `Android` or in `ios` folder
 
+- Ensure that `browserstackLocal` capability is set to `true` in the `browserstack.yml` file.
+
 - If you have uploaded your app then add the app id to the `browserstack.yml` config file, or you can directly specify the path to your app in the `browserstack.yml` file.
 
-- Run `browserstack-sdk python browserstack_sample.py`
+- Run `npm run sample-local-test`
 
 - You can access the test execution results, and debugging information such as video recording, network logs on [App Automate dashboard](https://app-automate.browserstack.com/dashboard)
 

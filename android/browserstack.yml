@@ -40,7 +40,7 @@ platforms:
   - deviceName: Samsung Galaxy S22 Ultra
     osVersion: 12.0
     platformName: android
-  - deviceName: Samsung Galaxy S21
+  - deviceName: OnePlus 9
     osVersion: 11.0
     platformName: android
   - deviceName: Google Pixel 6 Pro

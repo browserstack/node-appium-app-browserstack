@@ -62,7 +62,7 @@ jobs:
         run: |
           cd android
           npm install
-          npm run sample-local-test -- --browserstack.app "./LocalSample.apk"
+          npm run sample-local-test -- --browserstack.app="./LocalSample.apk"
       
       - name: Run sample ios tests
         run: |
@@ -74,7 +74,7 @@ jobs:
         run: |
           cd ios
           npm install
-          npm run sample-local-test -- --browserstack.app "./LocalSample.ipa"
+          npm run sample-local-test -- --browserstack.app="./LocalSample.ipa"
 
       - if: always()
         uses: actions/github-script@98814c53be79b1d30f795b907e553d8679345975

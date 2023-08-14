@@ -52,27 +52,28 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
 
-      - name: Install dependencies
-        run: npm install
-
       - name: Run sample android tests 
         run: |
           cd android
+          npm install
           npm run sample-test
 
       - name: Run local android tests
         run: |
           cd android
+          npm install
           npm run sample-local-test
       
       - name: Run sample ios tests
         run: |
           cd ios
+          npm install
           npm run sample-test
 
       - name: Run local ios tests
         run: |
           cd ios
+          npm install
           npm run sample-local-test
 
       - if: always()

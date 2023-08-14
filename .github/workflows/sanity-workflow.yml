@@ -55,11 +55,25 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run sample tests
-        run: npm run sample-test
+      - name: Run sample android tests 
+        run: |
+          cd android
+          npm run sample-test
 
-      - name: Run local tests
-        run: npm run sample-local-test
+      - name: Run local android tests
+        run: |
+          cd android
+          npm run sample-local-test
+      
+      - name: Run sample ios tests
+        run: |
+          cd ios
+          npm run sample-test
+
+      - name: Run local ios tests
+        run: |
+          cd ios
+          npm run sample-local-test
 
       - if: always()
         uses: actions/github-script@98814c53be79b1d30f795b907e553d8679345975

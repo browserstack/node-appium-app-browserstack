@@ -15,24 +15,25 @@ let userName = 'YOUR_USERNAME'
 let accessKey = "YOUR_ACCESS_KEY"
 
 desiredCaps = {
-     'browserstack.user' : userName,
-     'browserstack.key' : accessKey,
-  
-     // Set URL of the application under test
-     'app' : 'bs://<app-id>',
-  
-    // Specify device and os_version for testingg
-    'device' : 'iPhone 11 Pro',
-    'os_version' : '13',
-  
-    //Set browserstack.local capability as true
-    'browserstack.local' : true,
-  
+    "forceW3C": true,
+
+    // Specify device and os_version for testing
+    "platformName": "ios",
+    "appium:platformVersion": "12",
+    "appium:deviceName": 'iPhone XS',
+
+    // Set URL of the application under test
+    "appium:app": 'bs://<app-id>',
     // Set other BrowserStack capabilities
-    'project' : 'First NodeJS project',
-    'build' : 'Node iOS Local',
-    'name': 'local_test',
-    'browserstack.debug' : true,
+    'bstack:options' : {
+      "projectName" : "First NodeJS iOS Project",
+      "buildName" : "browserstack-build-1",
+      "sessionName" : "BStack local_test",
+      "debug" : "true",
+      "local" : "true",
+      "userName" : userName,
+      "accessKey" : accessKey
+    }
 };
 
 let promise = new Promise(function(resolve, reject) {
@@ -48,7 +49,7 @@ let promise = new Promise(function(resolve, reject) {
 promise.then(function() {
   // Initialize the remote Webdriver using BrowserStack remote URL
   // and desired capabilities defined above
-  driver = wd.promiseRemote("http://hub-cloud.browserstack.com/wd/hub");
+  driver = wd.promiseRemote("http://hub.browserstack.com/wd/hub");
 
   // Test case for the BrowserStack sample iOS Local app. 
   // If you have uploaded your app, update the test case here. 

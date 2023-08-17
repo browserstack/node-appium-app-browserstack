@@ -2,6 +2,12 @@
 
 This repository demonstrates how to run Appium NodeJS tests on BrowserStack App Automate.
 
+## Based on
+
+These code samples are currently based on:
+
+- **Wd:** `1.14.0`
+- **Protocol:** `W3C`
 ## Setup
 
 ### Requirements
@@ -84,7 +90,7 @@ Open `BrowserStackSampleLocal.js` file in `Android` or in `ios` folder
 
 - Set the device and OS version
 
-- Ensure that `browserstack.local` capability is set to `true`. Within the test script, there is code snippet that automatically establishes Local Testing connection to BrowserStack servers using Javascript binding for BrowserStack Local.
+- Ensure that `local` capability is set to `true`. Within the test script, there is code snippet that automatically establishes Local Testing connection to BrowserStack servers using Javascript binding for BrowserStack Local.
 
 - If you have uploaded your own app update the test case
 

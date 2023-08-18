@@ -5,18 +5,18 @@ let Q = wd.Q;
 let browserstack = require('browserstack-local');
 
 // Set your BrowserStack access credentials
-let userName = 'YOUR_USERNAME'
-let accessKey = "YOUR_ACCESS_KEY"
+let userName = 'tes_V5MvsqYpr5c'
+let accessKey = "YpovK4rcJa8LndL4NUXE"
 
 desiredCaps = {
-   'browserstack.user' : userName,
-   'browserstack.key' : accessKey,
+   'browserstack.user' : bayurizkhy_snQWko,
+   'browserstack.key' : WZ4xpkZvnNREsUkUH8Wt,
 
    // Set URL of the application under test
-   'app' : 'bs://<app-id>',
+   'app' : 'bs://df7671264546324fac5df2c770de1cfb6a3c1418',
 
   // Specify device and os_version for testing
-  'device' : 'Google Pixel 3',
+  'device' : 'Samsung Galaxy A10',
   'os_version' : '9.0',
 
   //Set browserstack.local capability as true

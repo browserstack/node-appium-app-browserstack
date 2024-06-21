@@ -1,0 +1,33 @@
+{
+  "name": "node-appium-app-browserstack",
+  "version": "0.1.0",
+  "readme": "NodeJS Integration with [BrowserStack](https://www.browserstack.com)",
+  "description": "Appium iOS examples for NodeJS and BrowserStack App Automate",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/browserstack/node-appium-app-browserstack.git"
+  },
+  "scripts": {
+    "sample-test": "browserstack-node-sdk node test/sample_test.js",
+    "sample-local-test": "browserstack-node-sdk node test/sample_local_test.js",
+    "postinstall": "npm update browserstack-node-sdk"
+  },
+  "keywords": [
+    "browserstack",
+    "appium",
+    "tests"
+  ],
+  "bugs": {
+    "url": "https://github.com/browserstack/node-appium-app-browserstack/issues"
+  },
+  "homepage": "https://github.com/browserstack/node-appium-app-browserstack#readme",
+  "dependencies": {
+    "selenium-webdriver": "^4.10.0"
+  },
+  "engines": {
+    "node": "^6"
+  },
+  "devDependencies": {
+    "browserstack-node-sdk": "latest"
+  }
+}

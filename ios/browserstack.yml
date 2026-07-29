@@ -23,6 +23,7 @@ buildName: browserstack build
 # Read more about buildIdentifiers here -> https://www.browserstack.com/docs/automate/selenium/organize-tests
 buildIdentifier: '#${BUILD_NUMBER}' # Supports strings along with either/both ${expression}
 
+aiAuthoring: true
 source: node:appium-sample-sdk:v1.0
 
 # Set `app` to define the app that is to be used for testing. 

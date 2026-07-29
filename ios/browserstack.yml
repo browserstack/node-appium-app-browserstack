@@ -3,8 +3,8 @@
 # =============================
 # Add your BrowserStack userName and acccessKey here or set BROWSERSTACK_USERNAME and
 # BROWSERSTACK_ACCESS_KEY as env variables
-userName: BROWSERSTACK_USERNAME
-accessKey: BROWSERSTACK_ACCESS_KEY
+userName: gedalavinodkumar_HbCtY8
+accessKey: UsstVkKaycn5j84EFWNi
 
 # ======================
 # BrowserStack Reporting
@@ -36,8 +36,8 @@ app: ./BStackSampleApp.ipa
 # Platforms object contains all the browser / device combinations you want to test on.
 # Entire list available here -> (https://www.browserstack.com/list-of-browsers-and-platforms/automate)
 
-platforms:
-  - deviceName: iPhone 14 Pro
+platforms: ios
+  - deviceName: iPhone 12 Pro Max
     osVersion: 16
     platformName: ios
   - deviceName: iPhone 13 Pro

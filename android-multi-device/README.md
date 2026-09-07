@@ -25,6 +25,8 @@ TypeError: Target browser must be a string, but is undefined
 
 This is because the SDK's capability-building code only ever reads the top-level `app` for the primary device; only the secondary device's app gets promoted from its per-platform entry.
 
+**One more layer to this:** that top-level `app` promotion (auto-uploading a local `.apk` path) is itself only done for the primary device. The secondary's `additionalPlatforms[0].app` does NOT get auto-uploaded if it's a local path — it's passed straight through and BrowserStack's API rejects it with `[BROWSERSTACK_INVALID_APP_CAP]`. `upload_apps.js` (run automatically by `npm run sample-test`) works around this: it uploads any local `.apk` path still in `browserstack.yml` and rewrites the file in place with the resulting `bs://` id, for both devices. Safe to re-run - once a path is replaced with a real id it's left alone.
+
 ## Running it
 
 From this folder:
@@ -33,6 +35,8 @@ From this folder:
 npm install
 npm run sample-test
 ```
+
+`sample-test` runs `upload_apps.js` first (uploads both apps if they're still local paths, see the gotcha above) then the test itself. To just upload without running the test: `npm run upload-apps`.
 
 You'll need `BROWSERSTACK_USERNAME` and `BROWSERSTACK_ACCESS_KEY` set as environment variables (or filled directly into `browserstack.yml`). Results, including both concurrent sessions, are visible on the [App Automate dashboard](https://app-automate.browserstack.com/dashboard).
 

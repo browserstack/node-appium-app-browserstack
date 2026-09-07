@@ -36,4 +36,4 @@ npm run sample-test
 
 You'll need `BROWSERSTACK_USERNAME` and `BROWSERSTACK_ACCESS_KEY` set as environment variables (or filled directly into `browserstack.yml`). Results, including both concurrent sessions, are visible on the [App Automate dashboard](https://app-automate.browserstack.com/dashboard).
 
-Both devices reuse the same `WikipediaSample.apk` fixture from this folder — the point of this sample is demonstrating the multi-driver *mechanism* (two concurrent sessions), not a two-different-apps scenario.
+This sample uses two different, independent apps — `CustomerApp-debug.apk` (primary device) and `RiderApp-debug.apk` (secondary device), a small ride-hailing style demo — to show the multi-driver feature in a realistic two-different-apps setting, not just two copies of the same app.

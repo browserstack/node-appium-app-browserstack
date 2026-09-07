@@ -1,0 +1,39 @@
+# Multi-device (concurrent sessions) sample
+
+This sample demonstrates how to run **two concurrent App Automate sessions from a single Node process** using the `browserstack-node-sdk`'s multi-driver feature, instead of the usual one-session-per-process pattern used in the [`android`](../android) sample.
+
+## How it works
+
+- Each device you want to drive concurrently gets a `label` in `browserstack.yml`: the first (primary) device is listed under `platforms`, every additional device under `additionalPlatforms`.
+- In the test, call `BrowserStackSdk.setDriverLabel('<label>')` immediately before each `new webdriver.Builder().build()` call. This tells the SDK which capability set to use for that particular session.
+- Build both sessions before interacting with either — both stay open and independently controllable (e.g. `getPageSource()`) at the same time, and are only torn down (`driver.quit()`) in a `finally` block once you're done with both.
+
+See [`browserstack.yml`](./browserstack.yml) and [`test/sample_test.js`](./test/sample_test.js) for the full pattern.
+
+## The one gotcha that matters: where `app` goes
+
+The SDK reads the app capability differently for the primary device versus every secondary device:
+
+- The **primary** device's `app` must stay a **top-level `app:` key** in `browserstack.yml` — the exact same field the single-device `android` sample uses. It must **not** be nested inside its own entry under `platforms:`.
+- The **secondary** device's `app` goes under its own `additionalPlatforms[<n>].app` entry — that's the only place the SDK reads a per-platform `app` for anything other than the primary.
+
+Getting this backwards (nesting the primary's `app` under `platforms[0].app` instead of top-level) fails silently on the very first `build()` call with:
+
+```
+TypeError: Target browser must be a string, but is undefined
+```
+
+This is because the SDK's capability-building code only ever reads the top-level `app` for the primary device; only the secondary device's app gets promoted from its per-platform entry.
+
+## Running it
+
+From this folder:
+
+```bash
+npm install
+npm run sample-test
+```
+
+You'll need `BROWSERSTACK_USERNAME` and `BROWSERSTACK_ACCESS_KEY` set as environment variables (or filled directly into `browserstack.yml`). Results, including both concurrent sessions, are visible on the [App Automate dashboard](https://app-automate.browserstack.com/dashboard).
+
+Both devices reuse the same `WikipediaSample.apk` fixture from this folder — the point of this sample is demonstrating the multi-driver *mechanism* (two concurrent sessions), not a two-different-apps scenario.

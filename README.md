@@ -50,6 +50,10 @@ Open `Android` or in `ios` folder
 
 - You can access the test execution results, and debugging information such as video recording, network logs on [App Automate dashboard](https://app-automate.browserstack.com/dashboard)
 
+## Multi-device (concurrent sessions) sample
+
+The [`android-multi-device`](./android-multi-device) folder demonstrates running **two concurrent App Automate sessions from a single Node process**, using the `browserstack-node-sdk`'s multi-driver feature (`additionalPlatforms` + `BrowserStackSdk.setDriverLabel(...)`). See that folder's README for setup, the full pattern, and an important gotcha around where the `app` capability goes for the primary vs. secondary device.
+
 ## Integration with other NodeJS frameworks
 
 For other NodeJS frameworks samples, refer to following repositories :

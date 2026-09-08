@@ -42,7 +42,7 @@ buildIdentifier: '#${BUILD_NUMBER}' # Supports strings along with either/both ${
 
 # Set `app` to define the app used for the PRIMARY (first) device.
 # It can either take the id of any uploaded app or the path of the app directly.
-app: ./CustomerApp-debug.apk
+app: ./ride-request-customer.apk
 
 # =======================================
 # Platforms (Browsers / Devices to test)
@@ -62,7 +62,7 @@ additionalPlatforms:
     deviceName: Samsung Galaxy S22 Ultra
     osVersion: 12.0
     platformName: android
-    app: ./RiderApp-debug.apk
+    app: ./ride-request-rider.apk
 
 # ==========================================
 # BrowserStack Local

@@ -27,6 +27,24 @@ This is because the SDK's capability-building code only ever reads the top-level
 
 **One more layer to this:** that top-level `app` promotion (auto-uploading a local `.apk` path) is itself only done for the primary device. The secondary's `additionalPlatforms[0].app` does NOT get auto-uploaded if it's a local path — it's passed straight through and BrowserStack's API rejects it with `[BROWSERSTACK_INVALID_APP_CAP]`. `upload_apps.js` (run automatically by `npm run sample-test`) works around this: it uploads any local `.apk` path still in `browserstack.yml` and rewrites the file in place with the resulting `bs://` id, for both devices. Safe to re-run - once a path is replaced with a real id it's left alone.
 
+## Backend
+
+`ride-request-customer.apk` and `ride-request-rider.apk` are a small Uber-style ride-hailing
+demo: the customer requests a ride, the rider accepts, then starts the ride using an OTP read
+off the customer app's screen. Both apps talk to a local backend for this state
+(idle → requested → accepted → started) — see [`backend/server.js`](./backend/server.js) for
+the endpoints. Start it before running the apps:
+
+```bash
+cd backend
+npm install
+npm start
+```
+
+It listens on `http://localhost:8787` by default (override with `PORT=xxxx npm start`) and is
+reached by the BrowserStack devices through BrowserStack Local, which is why
+`browserstackLocal: true` is set in [`browserstack.yml`](./browserstack.yml).
+
 ## Running it
 
 From this folder:

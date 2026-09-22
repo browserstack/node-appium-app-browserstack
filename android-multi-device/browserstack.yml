@@ -68,9 +68,10 @@ additionalPlatforms:
 # BrowserStack Local
 # (For localhost, staging/private websites)
 # ==========================================
-# Set browserStackLocal to true if your website under test is not accessible publicly over the internet
+# Both apps talk to the local ride-request backend (see ./backend, started with `npm start`),
+# so this must stay true for the devices to reach it via BrowserStack Local.
 # Learn more about how BrowserStack Local works here -> https://www.browserstack.com/docs/automate/selenium/local-testing-introduction
-browserstackLocal: false # <boolean> (Default false)
+browserstackLocal: true # <boolean> (Default false)
 
 # ===================
 # Debugging features

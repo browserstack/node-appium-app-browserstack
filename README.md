@@ -50,6 +50,16 @@ Open `Android` or in `ios` folder
 
 - You can access the test execution results, and debugging information such as video recording, network logs on [App Automate dashboard](https://app-automate.browserstack.com/dashboard)
 
+---
+
+### **Run two concurrent sessions from one process (multi-device / multi-app) :**
+
+Test script and setup are available in the [`android-multi-device`](./android-multi-device) folder — see its own [README](./android-multi-device/README.md) for how the `browserstack-node-sdk`'s multi-driver feature works and how to run it.
+
+- This sample includes a small ride-hailing style demo (`ride-request-customer.apk` / `ride-request-rider.apk`) with a local backend the two apps talk to — start it first with `cd android-multi-device/backend && npm install && npm start`.
+
+- Run `npm run sample-test` from the `android-multi-device` folder.
+
 ## Integration with other NodeJS frameworks
 
 For other NodeJS frameworks samples, refer to following repositories :
